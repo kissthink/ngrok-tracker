@@ -1,0 +1,19 @@
+<?php
+
+// csv to store uris, put it outside your web root!
+// the csv file must exist and be writable by your webserver
+$GLOBALS['csv'] = '/var/run/ngrok-track.csv';
+
+// credentials to see your tunnels
+$GLOBALS['username'] = 'username';
+$GLOBALS['password'] = 'password';
+
+// keys and aliases, you can get some keys at randomkeygen.com
+$GLOBALS['keys'] = array('key_1' => 'Alias 1',
+                         'key_2' => 'Alias 2',
+                         'key_3' => 'Alias 3');
+
+// timezone
+$GLOBALS['timezone'] = 'Mexico/General';
+
+?>

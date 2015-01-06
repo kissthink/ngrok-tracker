@@ -1,0 +1,11 @@
+[Unit]
+Description=Ngrok
+After=network.target
+ 
+[Service]
+ExecStart=/root/ngrok -log=stdout -config /root/.ngrok start ssh
+KillMode=process
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target

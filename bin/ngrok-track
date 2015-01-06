@@ -1,0 +1,13 @@
+#!/bin/bash
+
+URL="http://example.com/ngrok/update.php"
+KEY="key_1"
+
+URI=$(journalctl -b -r -u ngrok | grep -m 1 'Tunnel established at' | sed -n 's/^.*Tunnel\ established\ at\ \(.*\)$/\1/p')
+
+if [ ! -z "$URI" ]; then
+    logger "ngrok-track: $URI"
+    curl -s $URL --data-urlencode "k=$KEY" --data-urlencode "v=$URI"
+else
+    logger "ngrok-track: empty URI!"
+fi
