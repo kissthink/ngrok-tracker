@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ngrok Track</title>
+    <title>Ngrok Tracker</title>
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   </head>
   <body>
     <div class="container">
-      <h1>Ngrok Track</h1>
+      <h1>Ngrok Tracker</h1>
       <p><?php echo date('r'); ?></p>
       <div class="table-responsive">
         <table class="table table-striped">

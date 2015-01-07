@@ -11,7 +11,7 @@ function auth() {
       $_SERVER['PHP_AUTH_USER'] != $GLOBALS['username'] ||
       !isset($_SERVER['PHP_AUTH_PW']) || 
       $_SERVER['PHP_AUTH_PW'] != $GLOBALS['password']) {
-    header('WWW-Authenticate: Basic realm="Ngrok Track"');
+    header('WWW-Authenticate: Basic realm="Ngrok Tracker"');
     header('HTTP/1.0 401 Unauthorized');
     exit;
   }

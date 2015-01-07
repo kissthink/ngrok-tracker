@@ -1,4 +1,4 @@
-ngrok-track
-===========
+ngrok-tracker
+=============
 
 Track your ngrok tunnels

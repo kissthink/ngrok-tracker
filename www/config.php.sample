@@ -2,7 +2,7 @@
 
 // csv to store uris, put it outside your web root!
 // the csv file must exist and be writable by your webserver
-$GLOBALS['csv'] = '/var/run/ngrok-track.csv';
+$GLOBALS['csv'] = '/var/run/ngrok-tracker.csv';
 
 // credentials to see your tunnels
 $GLOBALS['username'] = 'username';
