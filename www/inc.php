@@ -23,9 +23,9 @@ function render() {
     return;
   }
   ksort($data, SORT_STRING);
-  foreach ($data as $id => $attrs) {
+  foreach ($data as $key => $attrs) {
     echo "<tr>";
-    echo "<td>" . $id . "</td>";
+    echo "<td>" . $GLOBALS['keys'][$key] . "</td>";
     echo "<td>" . $attrs['uri'] . "</td>";
     echo "<td>" . $attrs['timestamp'] . "</td>";
     echo "</tr>";
@@ -42,7 +42,7 @@ function load_csv() {
   $data = array();
   while(!feof($file)) {
     $line = fgetcsv($file);
-    if (count($line) == 3 && array_search($line[0], $GLOBALS['keys'])) {
+    if (count($line) == 3 && isset($GLOBALS['keys'][$line[0]])) {
       $data[$line[0]] = array('uri' => $line[1],
                               'timestamp' => $line[2]);
     }
@@ -56,8 +56,8 @@ function save_csv($data) {
   if (!$file) {
     return;
   }
-  foreach ($data as $id => $attrs) {
-    fputcsv($file, array($id, $attrs['uri'], $attrs['timestamp']));
+  foreach ($data as $key => $attrs) {
+    fputcsv($file, array($key, $attrs['uri'], $attrs['timestamp']));
   }
   fclose($file);
 }

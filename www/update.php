@@ -3,13 +3,12 @@
 require_once('inc.php'); 
 
 if (!isset($_POST['k']) || !isset($_POST['v']) ||
-    !array_key_exists($_POST['k'], $GLOBALS['keys'])) {
+    !isset($GLOBALS['keys'][$_POST['k']])) {
   exit;
 }
 
 $data = load_csv();
-$alias = $GLOBALS['keys'][$_POST['k']];
-$data[$alias] = array('uri' => $_POST['v'], 'timestamp' => date('r'));
+$data[$_POST['k']] = array('uri' => $_POST['v'], 'timestamp' => date('r'));
 save_csv($data);
 
 ?>
